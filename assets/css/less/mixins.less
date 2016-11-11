@@ -1,0 +1,106 @@
+/**** MIXINS ****/
+/**
+ * Generate defaults inners for paddings and margins
+ * Generate inners in multiples of five:
+ *
+ * NOTE: Note that classes are 'double-declarated' for
+ * specificity override purposes.
+ *
+ * p0 - p50:    padding
+ * m0 - m50:    margin
+ * mt0 - mt50:  margin-top
+ * mb0 - mb50:  margin-bottom
+  */
+.generate-inners( 10 );
+.generate-inners( @n, @i: 0 ) when ( @i =< @n ) {
+    @result: (@i * 5);
+
+    .p@{result}.p@{result}  {
+        padding: (@result * 1px) !important;
+    }
+    .pr@{result}.pr@{result}  {
+        padding-right: (@result * 1px) !important;
+    }
+    .pl@{result}.pl@{result}  {
+        padding-left: (@result * 1px) !important;
+    }
+    .m@{result}.m@{result}  {
+        margin: (@result * 1px) !important;
+    }
+    .mt@{result}.mt@{result}  {
+        margin-top: (@result * 1px) !important;
+    }
+    .ml@{result}.ml@{result}  {
+        margin-left: (@result * 1px) !important;
+    }
+    .mr@{result}.mr@{result}  {
+        margin-right: (@result * 1px) !important;
+    }
+    .mb@{result}.mb@{result}  {
+        margin-bottom: (@result * 1px) !important;
+    }
+
+    .t@{result}.t@{result}  {
+        top: (@result * 1px) !important;
+    }
+
+    .b@{result}.b@{result}  {
+        bottom: (@result * 1px) !important;
+    }
+
+    .generate-inners( @n, ( @i + 1 ) );
+}
+
+.opacity ( @opacity: 0.5 ) {
+    opacity: @opacity;
+}
+
+.border-radius ( @radius: 5px ) {
+    border-radius: @radius;
+}
+
+.border-radiuses ( @topleft: 5px, @topright: 5px, @bottomright: 5px, @bottomleft: 5px ) {
+    border-radius: @topleft @topright @bottomright @bottomleft;
+    background-clip: padding-box;
+}
+
+.box-shadow ( @x: 0px, @y: 3px, @blur: 5px, @alpha: 0.5 ) {
+    box-shadow: @x @y @blur rgba( 0, 0, 0, @alpha );
+}
+
+.transition ( @prop: all, @time: 1s, @ease: linear ) {
+    transition: @prop @time @ease;
+}
+
+.transition_ ( @prop... ) {
+    transition: @prop;
+}
+
+.transition-duration ( @duration: 0.2s ) {
+    transition-duration: @duration;
+}
+
+.transition-delay ( @delay: 0.2s ) {
+    transition-delay: @delay;
+}
+
+.transform ( @rotate: 90deg, @scale: 1, @skew: 1deg, @translate: 10px ) {
+    transform: rotate( @rotate ) scale( @scale ) skew( @skew ) translate( @translate );
+}
+
+.rotation ( @deg:5deg ) {
+    transform: rotate( @deg );
+}
+
+.scale ( @ratio: 1.5 ) {
+    transform: scale( @ratio );
+}
+
+.translate ( @x:0, @y:0 ) {
+    .transform( translate( @x, @y ) );
+}
+
+.opacity ( @opacity: 0.5 ) {
+    opacity: @opacity;
+    @opperc: @opacity * 100;
+}

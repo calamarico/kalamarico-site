@@ -1,0 +1,47 @@
+.simpleform {
+    .form-group > * {
+        display: inline-block;
+        margin-right: 5px;
+    }
+    .form-group{
+        display: inline-flex;
+        width: 100%;
+    }
+    .form-control {
+        width: 300px;
+    }
+    .control-label {
+        width: 300px;
+    }
+
+    .statuslist {
+        dl {
+            border-bottom: 1px solid @gray-light;
+        }
+    }
+
+    dl {
+        margin-bottom: 10px;
+    }
+    dt, dd {
+        display: inline-block;
+        width: 49%
+    }
+
+    fieldset {
+        margin-bottom: 40px;
+        &:first-child {
+            margin-top: 10px;
+        }
+    }
+    legend {
+        font-size: @font-size-h4;
+        color: @font-color-brand;
+    }
+
+    p {
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
+    }
+}

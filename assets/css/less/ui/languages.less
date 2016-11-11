@@ -1,0 +1,48 @@
+#language-header {
+    margin-right: 10px;
+
+    a, div {
+        cursor: pointer;
+    }
+
+    li {
+        a {
+            &:hover {
+                text-decoration: none;
+            }
+        }
+    }
+
+    .dropdown-menu {
+        max-width: 140px !important;
+        min-width: 70px !important;
+        width: 130px !important;
+
+        li {
+            a {
+                display: block;
+                font-size: 13px;
+                padding: 10px 12px;
+
+                i {
+                    padding-right: 8px;
+                    position: absolute;
+                }
+
+                img {
+                    width: 22px;
+                }
+
+                span {
+                    padding-left: 10px;
+                }
+            }
+        }
+
+        &:after {
+            border-bottom: none;
+            border-left: none;
+            border-right: none;
+        }
+    }
+}
