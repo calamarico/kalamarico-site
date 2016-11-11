@@ -1,2 +1,3 @@
 var MakeApp = angular
-    .module('App', []);
+    .module('App', [])
+    .run(function() {});
